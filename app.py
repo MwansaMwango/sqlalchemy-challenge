@@ -111,7 +111,7 @@ def tobs():
 
     results = session.query(Measurement.date, Measurement.tobs).\
     filter(Measurement.station == most_active_stations[0]).\
-    filter(Measurement.date > one_year_ago_date).\
+    filter(Measurement.date >= one_year_ago_date).\
     all()
 
     session.close()
